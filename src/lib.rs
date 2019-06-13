@@ -1,6 +1,12 @@
 use std::collections::HashMap;
 
 /// caesar represents the caesar cipher function, shifting the characters by `n` spaces.
+/// ```rust
+/// use libcaesar::caesar;
+/// let hello_world = "whole lotta red";
+/// let hello_world_ciphered = "xipmf mpuub sfe".to_string();
+/// assert_eq!(caesar(hello_world, 1), hello_world_ciphered)
+/// ```
 pub fn caesar(source: &str, n: usize) -> String {
     // calculate cipher so we DP only up until N=alphabet
     let alphabet = "abcdefguhijklmnopqrstuvwxyz";
@@ -39,12 +45,11 @@ pub fn caesar(source: &str, n: usize) -> String {
     output
 }
 
-mod test {
-    use crate::caesar;
+pub mod test {
 
     #[test]
-    fn caesar_cipher_works() {
-        assert_eq!(caesar("hello, world", 0), String::from("hello, world"));
-        assert_eq!(caesar("hello world", 1), String::from("ifmmp xpsme"));
+    pub fn caesar_cipher_works() {
+        assert_eq!(super::caesar("hello, world", 0), String::from("hello, world"));
+        assert_eq!(super::caesar("hello world", 1), String::from("ifmmp xpsme"));
     }
 }
