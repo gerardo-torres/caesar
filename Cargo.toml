@@ -1,0 +1,22 @@
+[package]
+name = "caesar"
+version = "0.1.0"
+authors = ["Haze Booth <isnt@haze.cool>"]
+edition = "2018"
+
+[lib]
+path = "src/lib.rs"
+name = "libcaesar"
+
+[[bin]]
+path = "src/main.rs"
+name = "caesar"
+
+[dependencies]
+
+[dev-dependencies]
+criterion = "0.2.11"
+
+[[bench]]
+name = "caesar_cipher"
+harness = false
